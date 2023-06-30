@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+</head>
+
+<body>
+    <header class="banner">
+        <div>
+            <p class="header-title">Interactive Geometry Genius</p>
+        </div>
+        <div>
+            <button class="btn btn-primary" id="blogBtn">Blog</button>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div style="margin-top:50px;">
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <div class="triangle" id="triShape" onmouseleave="undo(1)" onmouseenter="changeBackground(1)">
+                                    <img src="images/triangle.png" alt="" class="img-geo">
+                                    <p>Triangle</p>
+                                    <p>Area (A) = 0.5 x b x h</p>
+                                    <div class="save">
+                                        <input type="text" class="save-form" id="triangleInputFieldFirst" style="width:50%;"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                        <input type="text" class="save-form" id="triangleInputFieldSecond" style="width:50%;"
+                                            placeholder="h">
+                                        <p>cm</p>
+                                    </div>
+                                    <input type="button" id="triangleButton" class="btn btn-primary"
+                                        style="width:75%; margin-top:30px; margin-bottom: 30px;" value="Calculate">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="triangle" id="recShape" onmouseleave="undo(2)" onmouseenter="changeBackground(2)">
+                                    <img src="images/rectangle.png" alt="" class="img-geo">
+                                    <p>Rectangle</p>
+                                    <p>Area (A) = w x l</p>
+                                    <div class="save">
+                                        <input type="text" class="save-form" id="rectangleInputFieldFirst" style="width:50% ;"
+                                            placeholder="w">
+                                        <p>cm</p>
+                                        <input type="text" class="save-form" id="rectangleInputFieldSecond" style="width:50% ;"
+                                            placeholder="l">
+                                        <p>cm</p>
+                                    </div>
+                                    <input type="button" id="rectangleButton" class="btn btn-primary"
+                                        style="width:75%; margin-top:30px; margin-bottom: 30px;" value="Calculate">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="triangle" id="paraShape" onmouseleave="undo(3)" onmouseenter="changeBackground(3)">
+                                    <img src="images/parallelogram.png" alt="" class="img-geo">
+                                    <p>Parallelogram</p>
+                                    <p>Area (A) = b x h</p>
+                                    <div class="save">
+                                        <input type="text" class="save-form" id="parallelogramInputFieldFirst" style="width:50% ;"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                        <input type="text" class="save-form" id="parallelogramInputFieldSecond" style="width:50% ;"
+                                            placeholder="h">
+                                        <p>cm</p>
+                                    </div>
+                                    <input type="button" id="parallelogramButton" class="btn btn-primary"
+                                        style="width:75%; margin-top:30px; margin-bottom: 30px;" value="Calculate">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top:24px;">
+                            <div class="col-12 col-md-4">
+                                <div class="triangle" id="rhombusShape" onmouseleave="undo(4)" onmouseenter="changeBackground(4)">
+                                    <img src="images/rhombus.png" alt="" class="img-geo">
+                                    <p>Rhombus</p>
+                                    <p>Area (A) = 0.5 x d1 x d2</p>
+                                    <div class="save">
+                                        <input type="text" class="save-form" id="rhombusFirstInput" style="width:50% ;"
+                                            placeholder="d1">
+                                        <p>cm</p>
+                                        <input type="text" class="save-form" id="rhombusSecondInput" style="width:50% ;"
+                                            placeholder="d2">
+                                        <p>cm</p>
+                                    </div>
+                                    <input type="button" id="rhombusButton" class="btn btn-primary"
+                                        style="width:75%; margin-top:30px; margin-bottom: 30px;" value="Calculate">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="triangle" id="penShape" onmouseleave="undo(5)" onmouseenter="changeBackground(5)">
+                                    <img src="images/pentagon.png" alt="" class="img-geo">
+                                    <p>Pentagon</p>
+                                    <p>Area (A) = 0.5 x p x b</p>
+                                    <div class="save">
+                                        <input type="text" class="save-form" id="pentagonFirstInput" style="width:50% ;"
+                                            placeholder="p">
+                                        <p>cm</p>
+                                        <input type="text" class="save-form" id="pentagonSecondInput" style="width:50% ;"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                    </div>
+                                    <input type="button" id="pentagonButton" class="btn btn-primary"
+                                        style="width:75%; margin-top:30px; margin-bottom: 30px;" value="Calculate">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="triangle" id="elliShape" onmouseleave="undo(6)" onmouseenter="changeBackground(6)">
+                                    <img src="images/ellipse.png" alt="" class="img-geo">
+                                    <p>Ellipse</p>
+                                    <p>Area (A) = <img src="images/vector.png" alt="">ab</p>
+                                    <div class="save">
+                                        <input type="text" class="save-form" id="ellipseFirstInput" style="width:50% ;"
+                                            placeholder="a">
+                                        <p>cm</p>
+                                        <input type="text" class="save-form" id="ellipseSecondInput" style="width:50% ;"
+                                            placeholder="b">
+                                        <p>cm</p>
+                                    </div>
+                                    <input type="button" id="ellipseButton" class="btn btn-primary"
+                                        style="width:75%; margin-top:30px; margin-bottom: 30px;" value="Calculate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div>
+                            <h2 class="text-center"><u>Area Calculation</u></h2>
+                            <div class="mt-3">
+                                <div  id="hiddenArea">
+                                    <div  class="set">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="bootstrap.min.js"></script>
+    <script src="calculate.js"></script>
+</body>
+
+</html>
